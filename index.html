@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6학년 국어 | 골라 보는 영상</title>
+<style>
+:root{font-family: 'Pretendard','Noto Sans KR',system-ui,sans-serif;color:#20314b;background:#f3f7ff}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(120deg,#4f73e8,#8b70d7);color:white;padding:44px 20px 38px;text-align:center}header h1{margin:8px 0;font-size:clamp(28px,5vw,43px)}header p{margin:0;opacity:.94}.eyebrow{letter-spacing:.16em;font-size:12px;font-weight:800}main{max-width:1120px;margin:auto;padding:28px 20px 60px}.guide{background:#fff;border:1px solid #e3e9f7;border-radius:18px;padding:17px 22px;margin-bottom:24px;line-height:1.7}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}.toolbar h2{margin:0;font-size:22px}.toolbar span{font-size:14px;color:#60708d}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}.card{display:block;text-decoration:none;color:inherit;background:white;border:1px solid #e1e8f6;border-radius:20px;overflow:hidden;box-shadow:0 5px 18px #243c7810;transition:transform .18s,box-shadow .18s}.card:hover,.card:focus-visible{transform:translateY(-5px);box-shadow:0 12px 24px #243c7828;outline:2px solid #7089ec}.thumb{position:relative;aspect-ratio:16/9;background:#dce5fa;overflow:hidden}.thumb img{width:100%;height:100%;object-fit:cover;display:block}.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:#ffffffeb;display:grid;place-items:center;color:#536be0;font-size:24px;box-shadow:0 4px 20px #0002}.short .thumb{background:#e7dfff}.tag{position:absolute;top:12px;left:12px;background:#ffffffec;padding:6px 10px;border-radius:30px;font-size:12px;font-weight:800}.body{padding:16px 18px 19px}.body h3{margin:0 0 9px;font-size:19px}.body p{margin:0;color:#65718b;font-size:13px}.go{display:inline-block;margin-top:14px;background:#edf1ff;color:#4563cb;border-radius:10px;padding:9px 12px;font-size:13px;font-weight:800}footer{text-align:center;color:#7c879c;font-size:12px;padding:0 15px 25px}@media(max-width:550px){header{padding:32px 15px}main{padding:20px 14px 42px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.body{padding:12px}.body h3{font-size:16px}.play{width:44px;height:44px;font-size:19px}.tag{font-size:10px;top:7px;left:7px}.go{font-size:11px;padding:8px}}
+</style></head><body>
+<header><div class="eyebrow">KOREAN CLASS · VIDEO LIBRARY</div><h1>📚 골라 보는 국어 영상</h1><p>마음에 드는 영상을 선택하고, 즐겁게 감상해요!</p></header>
+<main><div class="guide">💡 <strong>영상 시청 약속</strong><br>① 보고 싶은 영상을 골라요. ② 카드를 누르면 유튜브가 새 창으로 열려요. ③ 인상 깊었던 장면과 느낀 점을 생각하며 시청해요.</div><div class="toolbar"><h2>🎬 영상 모음</h2><span>총 8개 영상 · 원하는 순서대로 선택</span></div><section class="grid" id="videos" aria-label="국어 영상 목록"></section></main>
+<footer>우리 반 국어 시간 · 영상은 YouTube에서 재생됩니다.</footer>
+<script>
+const videos=[
+{id:'Kzen6sXpedQ',url:'https://www.youtube.com/watch?v=Kzen6sXpedQ',type:'일반 영상'},
+{id:'otbM1t4f6FM',url:'https://www.youtube.com/watch?v=otbM1t4f6FM&list=PLdAZ7djS_hCz3fjTQxZhms4mXMqUs-E5s',type:'재생목록 연결'},
+{id:'siJXe2j2noQ',url:'https://www.youtube.com/watch?v=siJXe2j2noQ',type:'일반 영상'},
+{id:'jSHDIPD7mCQ',url:'https://www.youtube.com/shorts/jSHDIPD7mCQ',type:'짧은 영상',short:true},
+{id:'RIPzP9t_Cao',url:'https://www.youtube.com/shorts/RIPzP9t_Cao',type:'짧은 영상',short:true},
+{id:'F-pZ6azPeW8',url:'https://www.youtube.com/shorts/F-pZ6azPeW8',type:'짧은 영상',short:true},
+{id:'1Y7hOvRSPWg',url:'https://www.youtube.com/watch?v=1Y7hOvRSPWg',type:'일반 영상'},
+{id:'FHTVyAVQmLc',url:'https://www.youtube.com/watch?v=FHTVyAVQmLc',type:'일반 영상'}
+];
+document.querySelector('#videos').innerHTML=videos.map((v,i)=>`<a class="card ${v.short?'short':''}" href="${v.url.replaceAll('&','&amp;')}" target="_blank" rel="noopener noreferrer" aria-label="영상 ${i+1} 유튜브에서 보기"><div class="thumb"><img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="영상 ${i+1} 썸네일" loading="lazy" onerror="this.style.display='none'"><span class="tag">${v.short?'⚡ SHORTS':'▶ VIDEO'}</span><span class="play" aria-hidden="true">▶</span></div><div class="body"><h3>영상 ${i+1}</h3><p>${v.type}</p><span class="go">영상 보러 가기 ↗</span></div></a>`).join('');
+</script></body></html>
